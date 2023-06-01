@@ -1,0 +1,80 @@
+﻿<Window x:Class="Hunter_Planes_Of_War.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hunter_Planes_Of_War"
+        mc:Ignorable="d"
+        Title="Kayıtlı Üye Girişi" Height="700" Width="450" MinHeight="700" MinWidth="450" MaxHeight="800" MaxWidth="450" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Background/LoginBG.jpg"/>
+        </Grid.Background>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Kullanıcı Adı" Foreground="#FF9AD164" Background="Transparent" FontFamily="Ariosto" FontSize="14"/>
+                <TextBox VerticalContentAlignment="Center" x:Name="SavedUserName" Height="35" Width="170" Background="Transparent" MaxLength="15" BorderThickness="2" BorderBrush="#FF1F4F7C" Foreground="White" FontFamily="Source Code Pro Black" FontSize="20"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,220,0,0">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Şifre" Foreground="#FF9AD164" Background="Transparent" FontFamily="Ariosto" FontSize="14"/>
+                <PasswordBox VerticalContentAlignment="Center" x:Name="SavedUserPassword" Height="35" Width="170" MaxLength="15" Background="Transparent" BorderThickness="2" BorderBrush="#FF1F4F7C" Foreground="White" FontFamily="Source Code Pro Black" FontSize="20"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+            <CheckBox x:Name="Remember" Cursor="Hand" Content="Beni Hatırla" FontFamily="Georgia" FontSize="16" Background="Transparent" BorderThickness="2" BorderBrush="#FF2D85C0" Click="Remember_Click">
+                <CheckBox.Foreground>
+                    <RadialGradientBrush>
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FF439BCC" Offset="0.044"/>
+                    </RadialGradientBrush>
+                </CheckBox.Foreground>
+            </CheckBox>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,150">
+            <Button Cursor="Hand" Height="45" Width="160" Content="Giriş Yap" FontFamily="Elephant" FontSize="24" Click="Button_Click">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="brdr_main" CornerRadius="15" BorderThickness="0" BorderBrush="#FF7C7661">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Transparent"/>
+                                    <GradientStop Color="#FF5883B2" Offset="0.5"/>
+                                    <GradientStop Color="Transparent" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Content"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="brdr_main" Property="Background" Value="#FF5883B2"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="brdr_main" Property="Background" Value="#FF194D84"/>
+                                <Setter TargetName="brdr_main" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,120">
+            <TextBlock x:Name="RegisterText">
+                <Hyperlink NavigateUri="https://kaminaf.com" Foreground="White" FontFamily="Source Code Pro Black" FontSize="14" >
+                    Kayıt Ol
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
+        
+
+    </Grid>
+</Window>

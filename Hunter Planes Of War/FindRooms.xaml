@@ -1,0 +1,44 @@
+﻿<Window x:Class="Hunter_Planes_Of_War.FindRooms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hunter_Planes_Of_War"
+        mc:Ignorable="d"
+        Title="Oda Bul" MinHeight="500" Height="500" MaxHeight="500" MinWidth="450" Width="450" MaxWidth="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowStyle="ToolWindow" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background/3.jpg"/>
+    </Window.Background>
+    <Grid>
+        
+        <Grid Width="420" Height="440" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock x:Name="FreeRoom" Text="Müsait oda bulunmamaktadır." HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="25" />
+            <ListBox x:Name="RoomList" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="20" Background="Transparent" BorderThickness="0" Panel.ZIndex="1">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem" >
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Background" Value="{Binding RoomBG}"/>
+                        <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding RoomName}" Foreground="Red" FontFamily="Agent Orange" HorizontalAlignment="Left" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="170" Height="30" Margin="0,0,0,0">
+            <Button x:Name="RestartList" Click="RestartList_Click" Opacity="0.8" Cursor="Hand" Width="170" Height="30" Background="#FFFFCA5A" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Images/Icons/RestartList.png" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,0,0,0" />
+                    <TextBlock Foreground="#FF005A83" Text="Liste Yenile" FontFamily="Elephant" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" />
+                </StackPanel>
+            </Button>
+        </Grid>
+        
+    </Grid>
+</Window>

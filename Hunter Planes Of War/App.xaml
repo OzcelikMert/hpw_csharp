@@ -1,0 +1,17 @@
+﻿<Application x:Class="Hunter_Planes_Of_War.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Hunter_Planes_Of_War"
+             StartupUri="LoaderWindow.xaml">
+    <Application.Resources>
+        <ImageSource x:Key="NukeBang">Images/Gifs/Bang2.gif</ImageSource>
+        <ImageSource x:Key="Nuke_1">Images/Nukes/FirstPlayerNuke.png</ImageSource>
+        <ImageSource x:Key="Nuke_2">Images/Nukes/SecondPlayerNuke.png</ImageSource>
+        <ImageSource x:Key="EnergyNuke_1">Images/Nukes/EnergyNuke_Player_1.png</ImageSource>
+        <ImageSource x:Key="EnergyNuke_2">Images/Nukes/EnergyNuke_Player_2.png</ImageSource>
+        <ImageSource x:Key="Player_1_Dead">Images/Gifs/FirstPlayerDead.gif</ImageSource>
+        <ImageSource x:Key="Player_1_Life">Images/Planes/FirstPlayer.png</ImageSource>
+        <ImageSource x:Key="Player_2_Dead">Images/Gifs/SecondPlayerDead.gif</ImageSource>
+        <ImageSource x:Key="Player_2_Life">Images/Planes/SecondPlayer.png</ImageSource>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="Hunter_Planes_Of_War.MainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hunter_Planes_Of_War"
+        mc:Ignorable="d"
+        Title="Anasayfa" MinHeight="420" Height="450" MaxHeight="500" MinWidth="750" Width="800" MaxWidth="850" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background/bg.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Button Click="OnePerson_Click" Cursor="Hand" x:Name="OnePerson" Opacity="0.8" Width="140" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0" Background="#FF86FFFA">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Images/Icons/OnePerson.png" Width="18" Height="50" HorizontalAlignment="Center" Margin="0,0,0,5" />
+                <TextBlock Foreground="Black" Text="1 Oyuncu" FontFamily="Agent Orange Bold" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,0"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Settings" Click="Settings_Click" Opacity="0.8" Cursor="Hand" Width="140" Height="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,100,0" Background="#FFA9FF80">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Images/Icons/Settings.png" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,0,5" />
+                <TextBlock Foreground="Black" Text="Ayarlar" FontFamily="Agent Orange Bold" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0"></TextBlock>
+            </StackPanel>
+
+        </Button>
+        <Button Click="MultiPlayer_Click" x:Name="MultiPlayer" Opacity="0.8" Width="140" Cursor="Hand" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#FFD1B3F5">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Images/Icons/MultiPlayer.png" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,0,5" />
+                <TextBlock Foreground="Black" Text="Çok Oyunculu" FontFamily="Agent Orange Bold" FontSize="10" HorizontalAlignment="Right" Margin="0,0,0,0"></TextBlock>
+            </StackPanel>
+
+        </Button>
+        <Button Visibility="Hidden" x:Name="UserInfo" Click="UserInfo_Click" Opacity="0.8" Cursor="Hand" Width="140" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Background="#FFEEFFB2">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Images/Icons/Info.png" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,0,5" />
+                <TextBlock Foreground="Black" Text="Bilgilerim" FontFamily="Agent Orange Bold" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0"></TextBlock>
+            </StackPanel>
+
+        </Button>
+        <Image x:Name="KmtSoftware" Source="Images/Logo/Ozcelik.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="120" Width="200" Margin="0,20,0,0"/>
+        <Button Content="- Nasıl Oynanır? -" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="80,0,0,65" Background="Transparent" BorderThickness="2" FontSize="22" FontFamily="Jokerman" x:Name="InfoButton" Click="InfoButton_Click" Cursor="Help">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF682015"/>
+                    <GradientStop Color="#FF0F1E7C" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF641212"/>
+                    <GradientStop Color="#FF1E24A2" Offset="0.807"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,76 @@
+﻿<Window x:Class="Hunter_Planes_Of_War.PlayGamePage_2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:Hunter_Planes_Of_War"
+        mc:Ignorable="d"
+         Title="Online Oyun Sahası" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing" PreviewKeyDown="Window_PreviewKeyDown">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background/PlayGameBackground1.png"/>
+    </Window.Background>
+    <Grid>
+
+        <Canvas>
+
+            <Grid Height="35" Width="41" x:Name="FPNuke1">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="41" Height="20" Source="Images/Nukes/FirstPlayerNuke.png" />
+            </Grid>
+
+            <Grid x:Name="FirstPlayer">
+                <Image HorizontalAlignment="Left" Panel.ZIndex="2" Visibility="Hidden" x:Name="HittedGif" Height="70" Width="70" wpfanimated:ImageBehavior.RepeatBehavior="1x" wpfanimated:ImageBehavior.AutoStart="True" wpfanimated:ImageBehavior.AnimatedSource="Images/Gifs/Bang2.gif" wpfanimated:ImageBehavior.AnimateInDesignMode="False" wpfanimated:ImageBehavior.AnimationCompleted="HittedGif_AnimationCompleted" />
+                <StackPanel>
+                    <Image x:Name="PlaneOne" Height="50" Width="70" Source="Images/Planes/FirstPlayer.png" Margin="0,0,19,0" />
+                    <StackPanel Orientation="Horizontal">
+                        <ProgressBar  x:Name="HealthBarOne" HorizontalAlignment="Left" Height="10" Width="70" Background="DarkRed" Foreground="Green" FlowDirection="LeftToRight" />
+                        <Image VerticalAlignment="Top" Height="20" Width="20" Visibility="Hidden" x:Name="HealthGif" wpfanimated:ImageBehavior.RepeatBehavior="1x" wpfanimated:ImageBehavior.AutoStart="True" wpfanimated:ImageBehavior.AnimatedSource="Images/Gifs/GiveHealth1.gif" wpfanimated:ImageBehavior.AnimateInDesignMode="False" wpfanimated:ImageBehavior.AnimationCompleted="HealthGif_AnimationCompleted" />
+                    </StackPanel>
+                    <ProgressBar x:Name="EnergyBarOne" HorizontalAlignment="Left" Height="10" Width="70" Background="Transparent" Foreground="Orange" FlowDirection="LeftToRight" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Height="35" Width="41" x:Name="FPNuke2">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="41" Height="20" Source="Images/Nukes/SecondPlayerNuke.png" />
+            </Grid>
+
+            <Grid x:Name="SecondPlayer">
+                <Image Panel.ZIndex="1" Visibility="Hidden" x:Name="HittedGif2" Height="70" Width="70" wpfanimated:ImageBehavior.RepeatBehavior="1x" wpfanimated:ImageBehavior.AutoStart="True" wpfanimated:ImageBehavior.AnimatedSource="Images/Gifs/Bang2.gif" wpfanimated:ImageBehavior.AnimateInDesignMode="False" wpfanimated:ImageBehavior.AnimationCompleted="HittedGif2_AnimationCompleted" />
+                <StackPanel Orientation="Vertical">
+                    <Image x:Name="PlaneTwo" Height="50" Width="70" Source="Images/Planes/SecondPlayer.png" Margin="19,0,0,0" />
+                    <StackPanel Orientation="Horizontal">
+                        <Image VerticalAlignment="Top" Height="20" Width="20" Visibility="Hidden" x:Name="HealthGif2" wpfanimated:ImageBehavior.RepeatBehavior="1x" wpfanimated:ImageBehavior.AutoStart="True" wpfanimated:ImageBehavior.AnimatedSource="Images/Gifs/GiveHealth1.gif" wpfanimated:ImageBehavior.AnimateInDesignMode="False" wpfanimated:ImageBehavior.AnimationCompleted="HealthGif2_AnimationCompleted" />
+                        <ProgressBar x:Name="HealthBarTwo" HorizontalAlignment="Right" Height="10" Width="70" Background="DarkRed" Foreground="Green" FlowDirection="RightToLeft" />
+                    </StackPanel>
+                    <ProgressBar x:Name="EnergyBarTwo" HorizontalAlignment="Right" Height="10" Width="70" Background="Transparent" Foreground="Orange" FlowDirection="RightToLeft" />
+                </StackPanel>
+            </Grid>
+
+
+            <Image Visibility="Hidden" x:Name="FullEnergyNuke_Player1" Height="60" Width="48" Source="Images/Nukes/EnergyNuke_Player_1.png" />
+            <Image Visibility="Hidden" x:Name="FullEnergyNuke_Player2" HorizontalAlignment="Right" Height="60" Width="48" Source="Images/Nukes/EnergyNuke_Player_2.png" />
+
+            <Grid Visibility="Hidden" x:Name="LeftBanner" Width="20" Height="422" />
+            <Grid Visibility="Hidden" x:Name="RightBanner" Width="20" Height="422" />
+
+        </Canvas>
+
+        <TextBlock x:Name="StartTime" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Agent Orange Bold" FontSize="48" />
+
+        <!--Grid Visibility="Hidden" x:Name="LockScreen" Width="795" Height="420" Background="LightSkyBlue" Opacity="0.8">
+            <Grid.OpacityMask>
+                <LinearGradientBrush EndPoint="0.0,1" MappingMode="RelativeToBoundingBox" StartPoint="1,1">
+                    <GradientStop Color="Black" Offset="0.85"/>
+                    <GradientStop Color="Black" Offset="0.15"/>
+                    <GradientStop Offset="0.875" Color="#19A6A6A6"/>
+                    <GradientStop Color="#19A4A4A4" Offset="0.125"/>
+                </LinearGradientBrush>
+            </Grid.OpacityMask>
+            <TextBlock Foreground="BlueViolet" x:Name="LockScreenTB1" Text="Oyun Durduruldu" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" FontFamily="Rockwell Extra Bold" FontSize="36"/>
+            <Button Cursor="Hand" Height="50" Width="150" Foreground="DarkBlue" BorderThickness="0" BorderBrush="DarkBlue" x:Name="LockScreenB1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Devam Et" Margin="0,0,0,150" FontFamily="Segoe UI Black" FontSize="18" Background="Transparent" Click="LockScreenB1_Click"/>
+            <Button Cursor="Hand" Background="Transparent" Width="150" Height="50" Foreground="DarkGreen" BorderThickness="0" BorderBrush="Green" x:Name="LockScreenB2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Yeniden Başla" Margin="0,0,0,0" FontFamily="Segoe UI Black" FontSize="18" Click="LockScreenB2_Click"/>
+            <Button Cursor="Hand" Background="Transparent" Width="150" Height="50" Foreground="DarkRed" BorderThickness="0" BorderBrush="DarkRed" x:Name="LockScreenB3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Anasayfaya Git" Margin="0,150,0,0" FontFamily="Segoe UI Black" FontSize="18" Click="LockScreenB3_Click"/>
+        </-->
+
+    </Grid>
+</Window>
